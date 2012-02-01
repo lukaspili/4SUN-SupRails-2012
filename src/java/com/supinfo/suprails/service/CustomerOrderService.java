@@ -16,7 +16,7 @@ import javax.ejb.Stateless;
  * @author lukas
  */
 @Stateless
-public class CustomOrderService {
+public class CustomerOrderService {
     
     @EJB
     private CustomerOrderDao customerOrderDao;

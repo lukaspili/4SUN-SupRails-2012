@@ -5,10 +5,7 @@
 package com.supinfo.suprails.entity;
 
 import java.io.Serializable;
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 /**
  *
@@ -18,6 +15,7 @@ import javax.persistence.ManyToOne;
 public class CustomerOrder implements Serializable {
     
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
     @Embedded
