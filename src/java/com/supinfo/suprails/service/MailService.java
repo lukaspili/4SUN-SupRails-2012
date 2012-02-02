@@ -7,6 +7,7 @@ package com.supinfo.suprails.service;
 import com.supinfo.suprails.entity.Customer;
 import java.util.concurrent.Future;
 import javax.ejb.AsyncResult;
+import javax.ejb.Asynchronous;
 import javax.ejb.Stateless;
 
 /**
@@ -16,6 +17,7 @@ import javax.ejb.Stateless;
 @Stateless
 public class MailService {
     
+    @Asynchronous
     public Future<Boolean> sendToCustomer(Customer customer) {
         
         System.out.println("Sending email to " + customer.getEmail() +  "...");

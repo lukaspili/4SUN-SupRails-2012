@@ -4,11 +4,9 @@
  */
 package com.supinfo.suprails.service;
 
-import com.sun.xml.rpc.processor.generator.CustomClassGenerator;
 import com.supinfo.suprails.dao.CustomerOrderDao;
 import com.supinfo.suprails.entity.CustomerOrder;
 import javax.ejb.EJB;
-import javax.ejb.Local;
 import javax.ejb.Stateless;
 
 /**
@@ -26,7 +24,7 @@ public class CustomerOrderService {
     
     public void processCustomer(CustomerOrder customerOrder) {
         customerOrderDao.create(customerOrder);
-        mailService.sendToCustomer(customerOrder.getCustomer());
+        mailService.sendToCustomer(customerOrder.getCustomer());          
     }
     
 }
