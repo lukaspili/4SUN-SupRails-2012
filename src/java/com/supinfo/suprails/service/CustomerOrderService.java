@@ -22,9 +22,16 @@ public class CustomerOrderService {
     @EJB
     private MailService mailService;
     
+    @EJB
+    private PrinterMessageService printerMessageService;
+    
     public void processCustomer(CustomerOrder customerOrder) {
+        
         customerOrderDao.create(customerOrder);
-        mailService.sendToCustomer(customerOrder.getCustomer());          
+        
+        mailService.sendToCustomer(customerOrder.getCustomer());
+        
+        printerMessageService.printCustomerOrder(customerOrder);
     }
     
 }
